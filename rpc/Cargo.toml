@@ -1,0 +1,49 @@
+[package]
+name = "ckb-rpc"
+version = "0.16.0-pre"
+license = "MIT"
+authors = ["Nervos Core Dev <dev@nervos.org>"]
+edition = "2018"
+
+[dependencies]
+numext-fixed-hash = { version = "0.1", features = ["support_rand", "support_heapsize", "support_serde"] }
+numext-fixed-uint = { version = "0.1", features = ["support_rand", "support_heapsize", "support_serde"] }
+ckb-core = { path = "../core" }
+ckb-network = { path = "../network" }
+ckb-indexer = { path = "../indexer" }
+ckb-shared = { path = "../shared" }
+ckb-tx-pool-executor = { path = "../shared/tx-pool-executor" }
+ckb-store = { path = "../store" }
+ckb-db = { path = "../db" }
+ckb-sync = { path = "../sync" }
+ckb-chain = { path = "../chain" }
+ckb-miner = { path = "../miner" }
+ckb-protocol = { path = "../protocol" }
+ckb-logger = { path = "../util/logger"}
+ckb-network-alert = { path = "../util/network-alert" }
+jsonrpc-core = "10.1"
+jsonrpc-derive = "10.1"
+jsonrpc-http-server = { git = "https://github.com/nervosnetwork/jsonrpc", rev = "7c101f83a8fe34369c1b7a0e9b6721fcb0f91ee0" }
+jsonrpc-server-utils = "10.1"
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+flatbuffers = "0.6.0"
+num_cpus = "1.10"
+ckb-jsonrpc-types = { path = "../util/jsonrpc-types" }
+ckb-verification = { path = "../verification" }
+ckb-traits = { path = "../traits" }
+ckb-util = { path = "../util" }
+faketime = "0.2.0"
+sentry = "^0.15.4"
+ckb-dao = { path = "../util/dao" }
+
+[dev-dependencies]
+ckb-db = { path = "../db" }
+ckb-chain-spec = { path = "../spec" }
+ckb-notify = { path = "../notify" }
+reqwest = "0.9.16"
+ckb-test-chain-utils = { path = "../util/test-chain-utils" }
+tempfile = "3.0"
+pretty_assertions = "0.6.1"
+ckb-dao-utils = { path = "../util/dao/utils" }

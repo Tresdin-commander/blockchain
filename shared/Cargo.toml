@@ -1,0 +1,34 @@
+[package]
+name = "ckb-shared"
+version = "0.16.0-pre"
+authors = ["Nervos Core Dev <dev@nervos.org>"]
+edition = "2018"
+license = "MIT"
+
+[dependencies]
+serde = "1.0"
+serde_derive = "1.0"
+ckb-core = { path = "../core" }
+ckb-chain-spec = { path = "../spec" }
+ckb-util = { path = "../util" }
+ckb-store = { path = "../store" }
+ckb-db = { path = "../db" }
+numext-fixed-hash = { version = "0.1", features = ["support_rand", "support_heapsize", "support_serde"] }
+numext-fixed-uint = { version = "0.1", features = ["support_rand", "support_heapsize", "support_serde"] }
+lru-cache = { git = "https://github.com/nervosnetwork/lru-cache", rev = "a35fdb8" }
+faketime = "0.2"
+ckb-logger = { path = "../util/logger" }
+ckb-traits = { path = "../traits" }
+failure = "0.1.5"
+ckb-verification = { path = "../verification" }
+ckb-script = { path = "../script" }
+ckb-dao = { path = "../util/dao" }
+ckb-reward-calculator = { path = "../util/reward-calculator" }
+
+[dev-dependencies]
+env_logger = "0.6"
+tempfile = "3.0"
+rand = "0.6"
+serde_json = "1.0"
+ckb-chain = { path = "../chain" }
+ckb-notify = { path = "../notify" }

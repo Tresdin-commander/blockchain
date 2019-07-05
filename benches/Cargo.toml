@@ -1,0 +1,39 @@
+[package]
+name = "ckb-benches"
+version = "0.16.0-pre"
+license = "MIT"
+authors = ["Nervos Core Dev <dev@nervos.org>"]
+edition = "2018"
+
+[dependencies]
+
+
+[dev-dependencies]
+criterion = "0.2"
+ckb-pow = { path = "../pow" }
+ckb-chain = { path = "../chain" }
+ckb-core = { path = "../core" }
+ckb-shared = { path = "../shared" }
+ckb-store = { path = "../store" }
+ckb-chain-spec = { path = "../spec" }
+ckb-db = { path = "../db" }
+ckb-notify = { path = "../notify" }
+numext-fixed-hash = { version = "0.1", features = ["support_rand", "support_heapsize", "support_serde"] }
+numext-fixed-uint = { version = "0.1", features = ["support_rand", "support_heapsize", "support_serde"] }
+rand = "0.6"
+tempfile = "3.0"
+ckb-traits = { path = "../traits" }
+ckb-hash = {path = "../util/hash"}
+ckb-occupied-capacity = { path = "../util/occupied-capacity"}
+
+[[bench]]
+name = "cuckoo"
+harness = false
+
+[[bench]]
+name = "process_block"
+harness = false
+
+[[bench]]
+name = "fetch_cell_output"
+harness = false

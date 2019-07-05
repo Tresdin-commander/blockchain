@@ -1,0 +1,63 @@
+[package]
+name = "ckb"
+version = "0.16.0-pre"
+license = "MIT"
+authors = ["Nervos Core Dev <dev@nervos.org>"]
+edition = "2018"
+build = "build.rs"
+
+[build-dependencies]
+ckb-build-info = { path = "util/build-info" }
+
+[dependencies]
+ckb-build-info = { path = "util/build-info" }
+ckb-bin = { path = "ckb-bin" }
+
+[dev-dependencies]
+
+[workspace]
+members = [
+    "util/network-alert",
+    "util/multisig",
+    "util/logger",
+    "util/hash",
+    "util/merkle-tree",
+    "util/jsonrpc-types",
+    "util/crypto",
+    "util/instrument",
+    "util/build-info",
+    "util/occupied-capacity",
+    "util/stop-handler",
+    "util/app-config",
+    "script/data-loader",
+    "util/reward-calculator",
+    "shared/tx-pool-executor",
+    "ckb-bin",
+    "traits",
+    "network",
+    "protocol",
+    "protos",
+    "sync",
+    "core",
+    "store",
+    "shared",
+    "chain",
+    "miner",
+    "db",
+    "rpc",
+    "notify",
+    "spec",
+    "verification",
+    "script",
+    "pow",
+    "benches",
+    "resource",
+    "indexer",
+]
+
+[profile.release]
+debug = true
+overflow-checks = true
+
+[target.'cfg(unix)'.dependencies]
+jemallocator = { version = "0.3.0" }

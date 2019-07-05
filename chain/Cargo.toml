@@ -1,0 +1,35 @@
+[package]
+name = "ckb-chain"
+version = "0.16.0-pre"
+license = "MIT"
+authors = ["Nervos Core Dev <dev@nervos.org>"]
+edition = "2018"
+
+[dependencies]
+ckb-logger = { path = "../util/logger" }
+ckb-core = { path = "../core" }
+ckb-shared = { path = "../shared" }
+ckb-chain-spec = { path = "../spec" }
+ckb-db = { path = "../db" }
+ckb-store = { path = "../store" }
+ckb-notify = { path = "../notify" }
+ckb-verification = { path = "../verification" }
+faketime = "0.2.0"
+numext-fixed-hash = { version = "0.1", features = ["support_rand", "support_heapsize", "support_serde"] }
+numext-fixed-uint = { version = "0.1", features = ["support_rand", "support_heapsize", "support_serde"] }
+fnv = "1.0"
+crossbeam-channel = "0.3"
+ckb-stop-handler = { path = "../util/stop-handler" }
+lru-cache = { git = "https://github.com/nervosnetwork/lru-cache", rev = "a35fdb8" }
+serde = "1.0"
+ckb-traits = { path = "../traits" }
+failure = "0.1.5"
+serde_json = "1.0"
+serde_derive = "1.0"
+ckb-dao = { path = "../util/dao" }
+
+[dev-dependencies]
+env_logger = "0.6"
+tempfile = "3.0"
+ckb-test-chain-utils = { path = "../util/test-chain-utils" }
+ckb-dao-utils = { path = "../util/dao/utils" }
